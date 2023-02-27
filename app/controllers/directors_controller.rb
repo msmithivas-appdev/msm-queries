@@ -18,6 +18,19 @@ render({ :template => "directors_template/dir_profile.html.erb" })
 
 end
 
+def wisest
+
+@dir_hash =  Director.order({ :dob => :asc })
+
+@old_dir_info = @dir_hash.at(0)
+
+@old_dir_first_name = @old_dir_info.first_name
+  
+  render({ :template => "directors_template/eldest.html.erb" })
+
+
+end
+
 
 
 

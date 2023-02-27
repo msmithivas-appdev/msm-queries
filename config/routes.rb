@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
  # get("/directors/youngest", { :controller => "", :action => "index" })
 
- get("/directors/eldest", { :controller => "", :action => "index" })
+ get("/directors/eldest", { :controller => "directors", :action => "wisest" })
 
  get("/directors/:profile", { :controller => "directors", :action => "profile" })
   
