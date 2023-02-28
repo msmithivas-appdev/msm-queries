@@ -1,6 +1,3 @@
 <h1>Eldest Director</h1> 
 
-<p>The eldest director in our dataset right now is ... born on ...</p>
-
-
-# <%= @dir_info %><%=  %>
+<p>The eldest director in our dataset right now is <%= @old_dir_info.name %> born on <%= @old_dir_info.dob.strftime("%b %d, %Y") %></p>
