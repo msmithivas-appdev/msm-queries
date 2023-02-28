@@ -26,13 +26,20 @@ def wisest
 @dir_hash =  Director.where.not({ :dob => nil}).order({ :dob => :asc })
 
 @old_dir_info = @dir_hash.at(0)
-
-# @old_dir_first_name = @old_dir_info.first
   
   render({ :template => "directors_template/eldest.html.erb" })
 
-
 end
+
+def youngest
+
+  @dir_hash =  Director.where.not({ :dob => nil}).order({ :dob => :desc })
+  
+  @young_dir_info = @dir_hash.at(0)
+   
+   render({ :template => "directors_template/youngest.html.erb" })
+  
+  end
 
 
 
