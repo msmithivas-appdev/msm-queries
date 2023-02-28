@@ -1,3 +1,32 @@
-<h1>Director #<%= @dir_profile %>details<h1>
+<h1>Director #<%= @dir_profile %> details</h1>
 
-<%= @dir_info %><%=  %>
+<a href="/directors">Go back</a>
+
+<p>Name <%= @dir_info.name %></p>
+<p>Dob <%= @dir_info.dob %></p>
+<p>Bio <%= @dir_info.bio %></p>
+<p>Image <%= @dir_info.image %></p>
+<p>Created at <%= @dir_info.created_at %></p>
+<p>Updated at <%= @dir_info.updated_at %></p>
+
+
+<h1>Filmography</h1>
+
+<table border="1">
+
+<% @dir_movies.each do |a_movie| %>
+
+<tr>
+  <td> <%= a_movie.id %></td>
+  <td> 
+   <img src="http://robohash.org/<%= a_movie.id%>">
+  </td>
+  <td> <%= a_movie.title %></td>
+  <td> <%= a_movie.year %></td>
+  <td> <%= @dir_info.name %></td>
+  <td> <a href="/movies/<%= a_movie.id %> ">Show details</a></td>
+</tr>
+
+<% end %>
+
+</table>

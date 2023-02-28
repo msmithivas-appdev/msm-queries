@@ -10,9 +10,11 @@ require "date"
 
 def profile
 
+
 @dir_profile = params.fetch("profile")
-@dir_info = Director.where({ :id => @dir_profile.to_sym }).at(0)
-# @dir_first_name = @dir_info
+@dir_movies = Movie.where({ :id => @dir_profile})
+@dir_info = Director.where({ :id => @dir_profile}).at(0)
+
 
 
 render({ :template => "directors_template/dir_profile.html.erb" })
