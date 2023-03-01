@@ -15,5 +15,7 @@ Rails.application.routes.draw do
   get("/directors/:profile", { :controller => "directors", :action => "profile" })
 
   get("/movies/:profile", { :controller => "movies", :action => "profile" })
+
+  get("/actors/:profile", { :controller => "actors", :action => "profile" })
   
 end

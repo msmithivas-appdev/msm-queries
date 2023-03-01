@@ -12,9 +12,10 @@
   </td>
   <td> <%= a_movie.title %></td>
   <td> <%= a_movie.year %></td>
-  # <td> <% @dir_id = Movie.where({ :director_id => a_movie.director_id})  %>
-  #      <%= @dir_id.name %>
-  # </td>
+  <td> <% @dir_id = @list_of_directors.where({ :id => a_movie.director_id}).at(0)  %>
+       <% @dir_name = @dir_id.fetch("name")%>
+      <%= @dir_name %>
+  </td>
   <td> <a href="/movies/<%=a_movie.id %> ">Show details</a></td>
 </tr>
 

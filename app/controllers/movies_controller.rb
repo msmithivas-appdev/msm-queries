@@ -10,11 +10,11 @@ class MoviesController < ApplicationController
 
   def profile
 
-
   @movie_id = params.fetch("profile")
   @movie_info = Movie.where({ :id => @movie_id}).at(0)
-  
-
+  @list_of_directors = Director.all
+  @dir_id = @list_of_directors.where({ :id => @movie_id}).at(0)
+  @dir_name = @dir_id.fetch("name")
 
 
   render({ :template => "movies_template/movie_profile.html.erb" })
