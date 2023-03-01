@@ -3,7 +3,7 @@
 <table border="1">
 
 <%  @list_of_movies.each do |a_movie| %>
-
+<% @movie_id = a_movie.id  %>
 
 <tr>
   <td> <%= a_movie.id %></td>
@@ -16,7 +16,7 @@
        <% @dir_name = @dir_id.fetch("name")%>
       <%= @dir_name %>
   </td>
-  <td> <a href="/movies/<%=a_movie.id %> ">Show details</a></td>
+  <td> <a href="/movies/<%= @movie_id %> ">Show details</a></td>
 </tr>
 
 <% end %>

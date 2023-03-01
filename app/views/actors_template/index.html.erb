@@ -27,7 +27,7 @@
 
 
 <% $list_of_actors.each do |actor| %>
-
+<% @actor_id = actor.id %>
 <tr>
   
   <td> <%= actor.id %></td>
@@ -36,7 +36,7 @@
   </td>
   <td> <%= actor.name %></td>
   <td> <%= actor.dob %></td>
-  <td> <a href="/actors/<%= actor.id %> ">Show details</a></td>
+  <td> <a href="/actors/<%= @actor_id %> ">Show details</a></td>
   
 </tr>
 
