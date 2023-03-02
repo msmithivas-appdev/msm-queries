@@ -10,7 +10,11 @@
 
 </dl>
 
+<% @characters_hash = $list_of_characters.where({ :actor_id => @actor_id }) %>
+
 <h1>Filmography</h1>
+<table border="1">
+
 <tr>
     <th>
       Title
@@ -28,26 +32,24 @@
       Character name
     </th>
 
-    <th>
-    </th>
   
   </tr>
 
-  <dl>
-
-  @characters_hash = $list_of_characters.where({ :actor_id => @actor_id})
-
+  
 <% @characters_hash.each do |role| %>
-<%  @movie_hashes = @characters_hash.map_relation_to_array(:movie_id) %>
+
+<% m = Movie.where({ :id => role.movie_id }).at(0) %>
 
 <tr>
-  <td> <%= "Movie Title"  %></td>
-  <td> <%= "Movie Year"  %></td>
-  <td> <%= "Movie Director " %></td>
+  <td> <%= m.title %> </td>
+  <td> <%= m.year %></td>
+  
+  <% d = Director.where({ :id => m.director_id }).at(0) %>
+  <td> <%= d.name %></td>
+
   <td> <%= role.name %></td>
-  <td> <a href="/movies/<%= role.id %>" >Show details</a></td>
+  <td> <a href="/movies/<%= @actor_id %>" >Show details</a></td>
 </tr>
 
 <% end %>
-
-  </dl>
+</table>

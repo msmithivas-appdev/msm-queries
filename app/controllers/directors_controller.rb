@@ -12,7 +12,7 @@ def profile
 
 
 @dir_profile = params.fetch("profile")
-@dir_movies = Movie.where({ :id => @dir_profile})
+@dir_movies = Movie.where({ :director_id => @dir_profile})
 @dir_info = Director.where({ :id => @dir_profile}).at(0)
 
 

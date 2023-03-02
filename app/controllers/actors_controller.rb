@@ -18,6 +18,7 @@ class ActorsController < ApplicationController
   @actor_image = @actor_hash.fetch("image")  
 
 
+
   render({ :template => "actors_template/actor_profile.html.erb" })
 
   end
